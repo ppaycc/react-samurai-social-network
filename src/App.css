@@ -1,0 +1,24 @@
+.app-wrapper{
+  /* width: 1000px; */
+  margin: 0 auto;
+  background: #ccc;
+}
+.wrapper-two{
+  margin: 0 auto;
+  /* width: 1000px; */
+  max-width: 1000px;
+  min-width: 300px;
+  display: grid;
+  grid-template-areas: "nav content";
+  /* grid-template-rows: 1fr; */
+  grid-template-columns: 3fr 12fr;
+  grid-gap: 10px;
+}
+@media (max-width: 767px){
+  .wrapper-two{
+    /* grid-template-rows: 1fr 1fr; */
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav nav" "content content";
+    grid-column-gap: 0px;
+  }
+}

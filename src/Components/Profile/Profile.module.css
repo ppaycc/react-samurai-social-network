@@ -1,0 +1,44 @@
+.content{
+  grid-area: content;
+  background: url(./../../mountains.jpg) center no-repeat;
+  background-size: cover;
+  /* border: 2px solid pink; */
+  border-radius: 20px;
+
+}
+.content .contentHeader{
+  height: 100px;
+  overflow: hidden;
+}
+.content .contentHeader img{
+  width: 100%;
+}
+.about{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.avatar{
+  overflow: hidden;
+  display: inline-block;
+  width: 225px;
+  height: 225px;
+  vertical-align: top;
+  border-radius: 20px;
+}
+.avatar img{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+}
+.aboutInf{
+  padding: 0 10px;
+  border-radius: 10px;
+  width: 225px;
+  height: 225px;
+  /* max-height: 225px; */
+  display: inline-block;
+  margin-left: 10px;
+  background: rgba(255, 255, 255, .5);
+}

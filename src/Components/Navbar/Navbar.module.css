@@ -1,0 +1,27 @@
+.nav{
+  /* position: fixed; */
+  grid-area: nav;
+  background: #017987;
+  align-self: start;
+  border-radius: 20px;
+}
+.nav a{
+  color: white;
+  display: block;
+  padding: 5px 5px 5px 10px;
+  transition: 0.2s;
+}
+.nav a:first-child{
+  border-radius: 20px 20px 0px 0;
+}
+.nav a:last-child{
+  border-radius: 0px 0px 20px 20px;
+}
+.nav a:hover{
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.nav a.activeLink{
+  background: burlywood;
+}

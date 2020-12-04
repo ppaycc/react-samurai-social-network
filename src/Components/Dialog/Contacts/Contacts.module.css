@@ -1,0 +1,22 @@
+.main{
+    background: white;
+    border-radius: 20px;
+    padding: 10px;
+    height: 500px;
+    overflow: auto;
+    scrollbar-color: #458244;
+    border-bottom: 1px solid white
+    /* scrollbar-width: auto | thin | none; */
+}
+::-webkit-scrollbar {
+    width: 5px; /*ширина для вертикального скролла*/
+    height: 1px; /* высота для горизонтального скролла */
+    background-color: none;
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    padding: 10px 0;
+    background-color: #017987;
+    /* border-radius: 9em; */
+    /* box-shadow: inset 1px 1px 10px #f3faf7; */
+}

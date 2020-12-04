@@ -1,0 +1,27 @@
+.main{
+    background: pink;
+    max-width: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+.main p{
+    margin-bottom: 0;
+    display: inline-block;
+}
+.main .time{
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    /* display: block; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.main .span{
+    position: relative;
+}
+.spy{
+    opacity: 0;
+}

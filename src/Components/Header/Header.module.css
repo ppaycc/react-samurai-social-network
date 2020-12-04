@@ -1,0 +1,15 @@
+
+.forHeader{
+  /* position: fixed; */
+  width: 100%;
+  /* background:#0099ff; */
+  background: #017987;
+  margin-bottom: 10px;
+}
+.header img{
+  width: 50px;
+}
+.header{
+  max-width: 1000px;
+  margin: 0 auto;
+}
