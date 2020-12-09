@@ -1,7 +1,7 @@
 import s from "./ChatInput.module.css";
 
 const ChatInput = () => {
-  return <div className={s.main}></div>;
+  return <textarea className={s.main}></textarea>;
 };
 
 export default ChatInput;
