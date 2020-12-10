@@ -1,6 +1,6 @@
 .main{
     background: white;
-    border-radius: 20px;
+    border-radius: 20px 20px 0px 0px;
     padding: 10px;
     height: 500px;
     overflow: auto;
@@ -10,4 +10,21 @@
     /* align-items: flex-start; */
     display:flex;
 flex-direction:column-reverse;
+    border: 1px solid white;
+}
+.reletive{
+    position: relative;
+    overflow: hidden;
+}
+.button{
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url(send.png) center no-repeat;
+    background-size: contain;
+    /*display: none;*/
 }

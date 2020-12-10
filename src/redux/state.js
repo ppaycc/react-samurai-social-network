@@ -1,5 +1,6 @@
-import {rerenderTree} from "./../render";
+let rerenderTree = () => {
 
+}
 
   let state = {
     profilePage:  {
@@ -19,7 +20,19 @@ import {rerenderTree} from "./../render";
             { id: 5, name: "Bylochka" },
             { id: 6, name: "Oleg" },
             { id: 7, name: "admin" },
-          ]
+          ],
+        newDialogMessage: '',
+        dialogMessages: [
+            {id: 1, value: "sting Больша стыроыка sdf", time: "12:08", who: "input"},
+            {id: 2, value: "sting ntcnbs ываывнг ывашгывпа ываршныва вышра", time: "12:08", who: "input"},
+            {id: 3, value: "stiывагшп выарывравырарвыаывооаывоа в ва ва в в в в вв в  вng", time: "12:08", who: "output"},
+            {id: 4, value: "Я ЭТО СДЕЛАЛАЛАЛАЛАЛЛАЛ", time: "12.08", who: "output"},
+            {id: 5, value: "sting ntcnbs ываывнг ывашгывпа ываршныва вышра", time: "12:08", who: "input"},
+            {id: 6, value: "sting Больша стыроыка sdf", time: "12:08", who: "input"},
+            {id: 7, value: "sting Больша стыроыка sdf", time: "12:08", who: "input"},
+            {id: 8, value: "sting Больша стыроыка sdf", time: "12:08", who: "input"},
+            {id: 9, value: "sting Больша стыроыка sdf", time: "12:08", who: "input"},
+        ]
       },
       sidebar: {
         friends: [
@@ -58,5 +71,30 @@ export const updataNewPostHeader = (newHeader) => {
 
   rerenderTree(state);
 }
+////////////////////////////////////////////////////////////
+export const updataDialogMessages = (newValue) => {
+      state.dialogPage.newDialogMessage = newValue;
+      rerenderTree(state);
+}
+export const sendNewMessage = () => {
 
-  export default state;
+    // console.log(11111)
+      if(state.dialogPage.newDialogMessage.length >= 1){
+          console.log(state.dialogPage.newDialogMessage)
+          let sms = {
+              id: (state.dialogPage.dialogMessages.length + 1),
+              value: state.dialogPage.newDialogMessage,
+              time: "12:12",
+              who: "output"
+          }
+          state.dialogPage.dialogMessages.unshift(sms);
+      }
+      state.dialogPage.newDialogMessage = "";
+      rerenderTree(state);
+}
+
+export const subscriber = (observer) => {
+    rerenderTree = observer;
+}
+
+export default state;

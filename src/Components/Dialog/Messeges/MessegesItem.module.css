@@ -1,0 +1,63 @@
+.input.main{
+    background: #ccc;
+    max-width: 90%;
+    /* word-wrap: break-word; */
+    padding: 10px;
+    border-radius: 15px;
+    align-self: flex-start;
+    margin-top: 10px;
+    /* position: reletive; */
+}
+.input.main p{
+    margin-bottom: 0;
+    display: inline-block;
+    word-wrap: break-word;
+    width: 100%;
+}
+.input.main .time{
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    /* display: block; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.input.spy{
+    opacity: 0;
+}
+.input.main .span{
+    position: relative;
+}
+
+.output.main{
+    background: pink;
+    max-width: 90%;
+    /* word-wrap: break-word; */
+    padding: 10px;
+    border-radius: 15px;
+    align-self: flex-end;
+    margin-top: 10px;
+    /* position: reletive; */
+}
+.output.main p{
+    margin-bottom: 0;
+    display: inline-block;
+    word-wrap: break-word;
+    width: 100%;
+}
+.output.main .time{
+    color: grey;
+    font-size: 12px;
+    margin-left: 10px;
+    /* display: block; */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.output.spy{
+    opacity: 0;
+}
+.output.main .span{
+    position: relative;
+}
