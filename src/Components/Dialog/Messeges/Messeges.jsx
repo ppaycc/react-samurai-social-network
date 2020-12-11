@@ -5,14 +5,16 @@ import React from 'react'
 import s from "./Messeges.module.css";
 import MessagesItem from "./MessegesItem";
 import ChatInput from "./ChatInput";
+import store from "../../../redux/state";
+
 
 const Messeges = (props) => {
-    console.log(props.state.dialogMessages)
+    console.log(props)
     let sms = props.state.dialogMessages.map(el => {
       return  <MessagesItem id={el.id} who={el.who} time={el.time} value={el.value}/>
     });
     const sendMessage = () => {
-        props.sendNewMessage();
+        store.sendNewMessage();
     }
   return (
       <div>
@@ -21,7 +23,7 @@ const Messeges = (props) => {
          </div>
           <div className={s.reletive}>
               <ChatInput updataDialogMessages={props.updataDialogMessages} newDialogMessage={props.state.newDialogMessage}/>
-              <button className={s.button} onClick={sendMessage} sendNewMessage={props.sendNewMessage}></button>
+              <button className={s.button} onClick={sendMessage} ></button>
           </div>
       </div>
   );

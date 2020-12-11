@@ -9,7 +9,7 @@ import AllProfile from './Components/Profile/AllProfile';
 import Settings from "./Components/Settings/Settings";
 import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
-import {addPost, sendNewMessage, updataDialogMessages} from "./redux/state";
+// import {addPost, sendNewMessage, updataDialogMessages} from "./redux/state";
 
 
 
@@ -23,7 +23,7 @@ function App(props) {
       <div>
 
          <Route path="/profile" render={ () => <AllProfile state={props.state.profilePage} addPost={props.addPost}/> }/>
-         <Route path="/dialog" render={ () => <Dialog state={props.state.dialogPage} updataDialogMessages={updataDialogMessages} sendNewMessage={sendNewMessage}/> }/>
+         <Route path="/dialog" render={ () => <Dialog state={props.state.dialogPage} updataDialogMessages={props.updataDialogMessages} sendNewMessage={props.sendNewMessage}/> }/>
          <Route path="/news" render={() => <News />}/>
          <Route path="/music" render={() => <Music />}/>
          <Route path="/settings" render={() => <Settings />}/>

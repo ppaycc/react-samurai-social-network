@@ -4,6 +4,7 @@ import Messeges from "./Messeges/Messeges";
 import React from 'react'
 
 const Dialog = (props) => {
+    console.log(props)
     // console.log(props.state)
   return (
     <div className={s.dialog}>

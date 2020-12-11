@@ -1,22 +1,22 @@
 import s from "./CreatePost.module.css";
 import React from "react";
-import { updataNewPostHeader, updataNewPostText } from "../../redux/state";
+import store from "../../redux/state";
 
 const CreatePost = (props) => {
   console.log(props.forPosts);
   let newPostText = React.createRef();
   let newPostHeader = React.createRef();
   let addPost = () => {
-    props.addPost();
+    store.addPost();
   };
 
   const cnahgePostText = () => {
     let text = newPostText.current.value;
-    updataNewPostText(text);
+    store.updataNewPostText(text);
   };
   const changePostHeader = () => {
     let header = newPostHeader.current.value;
-    updataNewPostHeader(header);
+    store.updataNewPostHeader(header);
   };
 
   return (
