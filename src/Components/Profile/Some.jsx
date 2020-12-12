@@ -9,7 +9,7 @@ const Some = (props) => {
 
   return (
     <div className={s.some}>
-      <CreatePost addPost={props.addPost} forPosts={props.fornewpost} />
+      <CreatePost dispatch={props.dispatch} forPosts={props.fornewpost} />
       {postsData}
     </div>
   );

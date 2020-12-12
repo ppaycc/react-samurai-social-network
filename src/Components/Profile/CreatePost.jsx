@@ -1,22 +1,20 @@
 import s from "./CreatePost.module.css";
 import React from "react";
-import store from "../../redux/state";
 
 const CreatePost = (props) => {
-  console.log(props.forPosts);
   let newPostText = React.createRef();
   let newPostHeader = React.createRef();
   let addPost = () => {
-    store.addPost();
+    props.dispatch({type: 'ADD-POST'})
   };
 
   const cnahgePostText = () => {
     let text = newPostText.current.value;
-    store.updataNewPostText(text);
+    props.dispatch({type: 'UPDATA-NEW-POST-TEXT', newText: text});
   };
   const changePostHeader = () => {
     let header = newPostHeader.current.value;
-    store.updataNewPostHeader(header);
+      props.dispatch({type: 'UPDATA-NEW-POST-HEADER', newHeader: header})
   };
 
   return (

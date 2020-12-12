@@ -9,7 +9,7 @@ const AllProfile = (props) => {
       <Profile />
       <Some
         posts={props.state.posts}
-        addPost={props.addPost}
+        dispatch={props.dispatch}
         fornewpost={props.state}
       />
     </div>
