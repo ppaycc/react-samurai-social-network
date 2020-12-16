@@ -2,14 +2,14 @@ import React from 'react'
 import s from "./Messeges.module.css";
 import MessagesItem from "./MessegesItem";
 import ChatInput from "./ChatInput";
-
+import {sendMessageActionCreactor} from "../../../redux/state";
 
 const Messeges = (props) => {
     let sms = props.state.dialogMessages.map(el => {
       return  <MessagesItem id={el.id} who={el.who} time={el.time} value={el.value}/>
     });
     const sendMessage = () => {
-        props.dispatch({type: 'SEND-MESSAGE'})
+        props.dispatch(sendMessageActionCreactor());
     }
   return (
       <div>

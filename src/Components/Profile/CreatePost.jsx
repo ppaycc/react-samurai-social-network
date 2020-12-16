@@ -1,20 +1,23 @@
 import s from "./CreatePost.module.css";
 import React from "react";
+import {addPostActionCreator, changePostHeaderActionCreator, changePostTextActionCreator} from "../../redux/state";
+
+
 
 const CreatePost = (props) => {
   let newPostText = React.createRef();
   let newPostHeader = React.createRef();
   let addPost = () => {
-    props.dispatch({type: 'ADD-POST'})
+    props.dispatch(addPostActionCreator())
   };
 
-  const cnahgePostText = () => {
+  const changePostText = () => {
     let text = newPostText.current.value;
-    props.dispatch({type: 'UPDATA-NEW-POST-TEXT', newText: text});
+    props.dispatch(changePostTextActionCreator(text));
   };
   const changePostHeader = () => {
     let header = newPostHeader.current.value;
-      props.dispatch({type: 'UPDATA-NEW-POST-HEADER', newHeader: header})
+      props.dispatch(changePostHeaderActionCreator(header))
   };
 
   return (
@@ -27,7 +30,7 @@ const CreatePost = (props) => {
         value={props.forPosts.newPostHeader}
       />
       <textarea
-        onChange={cnahgePostText}
+        onChange={changePostText}
         placeholder="Новый пост"
         ref={newPostText}
         value={props.forPosts.newPostText}
