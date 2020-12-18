@@ -2,7 +2,8 @@
     background: white;
     border-radius: 20px 20px 0px 0px;
     padding: 10px;
-    height: 500px;
+    /*height: 500px;*/
+    height: calc(100vh - 70px - 75px);
     overflow: auto;
     /* display: flex-inline; */
     /* flex-direction: column-reverse; */

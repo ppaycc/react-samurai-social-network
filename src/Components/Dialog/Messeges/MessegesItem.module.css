@@ -61,3 +61,7 @@
 .output.main .span{
     position: relative;
 }
+
+.hide{
+    user-select: none;
+}

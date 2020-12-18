@@ -5,7 +5,7 @@ const MessagesItem = (props) => {
             <div className={s.span}>
                 <p>
                     {props.value}
-                    <span className={`${s.spy} ${s[props.who]}`}>1212p</span>
+                    <span className={`${s.spy} ${s[props.who]}`}><span className={s.hide}>00:00t</span></span>
                 </p>
                 <span className={ `${s.time} ${s[props.who]}` }> {props.time} </span>
             </div>

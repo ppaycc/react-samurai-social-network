@@ -9,6 +9,7 @@ import AllProfile from './Components/Profile/AllProfile';
 import Settings from "./Components/Settings/Settings";
 import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
+import React from "react";
 
 
 

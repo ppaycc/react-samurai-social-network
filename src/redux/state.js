@@ -1,8 +1,5 @@
-const UPDATE_DIALOG_MESSAGES = 'UPDATE-DIALOG-MESSAGES';
-const SEND_MESSAGE = 'SEND-MESSAGE';
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_HEADER = 'UPDATE-NEW-POST-HEADER';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+import profileReducer from "./profilePage-reducer";
+import dialogsReducer from "./dialogsPage-reducer";
 
 const store = {
     _state: {
@@ -13,7 +10,7 @@ const store = {
                 { id: 1, header: "Заголовок поста", text: "Это текст поста", likes: 20 },
                 { id: 2, header: "Еще один длинный заголовок поста Еще один длинный заголовок поста Еще один длинный заголовок поста", text: "Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста", likes: 15,},
                 { id: 3, header: "Совершил ли самоубийство Гитлер", text: "Свалил та свалил тебе то шо лол", likes: 999 },
-            ],},
+            ]},
         dialogPage: {
             dialogItem: [
                 { id: 1, name: "Petya" },
@@ -55,47 +52,12 @@ const store = {
         console.log("rerender");
     },
     dispatch(action) {
-      if(action.type === ADD_POST){
-          if(this._state.profilePage.newPostText && this._state.profilePage.newPostHeader){
-              let newPost = {
-                  id: (this._state.profilePage.posts.length+1),
-                  text: this._state.profilePage.newPostText,
-                  header: this._state.profilePage.newPostHeader,
-                  likes: 0
-              }
-              this._state.profilePage.posts.unshift(newPost);
-              this._state.profilePage.newPostText = "";
-              this._state.profilePage.newPostHeader = "";
-          }
-          this._rerenderTree(this._state);
 
-      }  else if (action.type === UPDATE_NEW_POST_TEXT){
-          this._state.profilePage.newPostText = action.newText;
-          this._rerenderTree(this._state);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
 
-      } else if (action.type === UPDATE_NEW_POST_HEADER) {
-          this._state.profilePage.newPostHeader = action.newHeader;
-          this._rerenderTree(this._state);
+        this._rerenderTree(this._state);
 
-      } else if (action.type === UPDATE_DIALOG_MESSAGES) {
-          this._state.dialogPage.newDialogMessage = action.newValue;
-          this._rerenderTree(this._state);
-
-      } else if (action.type === SEND_MESSAGE){
-          if(this._state.dialogPage.newDialogMessage.length >= 1){
-              let sms = {
-                  id: (this._state.dialogPage.dialogMessages.length + 1),
-                  value: this._state.dialogPage.newDialogMessage,
-                  time: "12:12",
-                  who: "output"
-              }
-              this._state.dialogPage.dialogMessages.unshift(sms);
-              this._state.dialogPage.newDialogMessage = "";
-          }
-          this._state.dialogPage.newDialogMessage = "";
-          this._rerenderTree(this._state);
-
-      }
     },
     subscriber(observer) {
         this._rerenderTree = observer;
@@ -103,20 +65,5 @@ const store = {
 
 };
 
-export const changePostTextActionCreator = (text) => {
-    return {type: UPDATE_NEW_POST_TEXT, newText: text}
-}
-export const changePostHeaderActionCreator = (header) => {
-    return {type: UPDATE_NEW_POST_HEADER, newHeader: header}
-}
-export const addPostActionCreator = () => {
-    return {type: ADD_POST}
-}
-export const sendMessageActionCreactor = () => {
-    return {type: SEND_MESSAGE}
-}
-export const updateDialogMessageActionCreator = (text) =>{
-    return {type: UPDATE_DIALOG_MESSAGES, newValue: text}
-}
 
 export default store;

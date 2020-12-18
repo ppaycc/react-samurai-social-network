@@ -1,6 +1,6 @@
 import s from "./ChatInput.module.css";
 import React from 'react';
-import {updateDialogMessageActionCreator} from "../../../redux/state";
+import {updateDialogMessageActionCreator} from "../../../redux/dialogsPage-reducer";
 
 const ChatInput = (props) => {
   let newMessageWrite = React.createRef();
