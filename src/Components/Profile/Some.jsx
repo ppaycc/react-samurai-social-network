@@ -1,6 +1,7 @@
 import CreatePost from "./CreatePost";
 import Post from "./MyPosts/Post";
 import s from "./Some.module.css";
+import CreatePostContainer from "./CreatePostContainer";
 
 const Some = (props) => {
   let postsData = props.posts.map((p) => (
@@ -9,7 +10,8 @@ const Some = (props) => {
 
   return (
     <div className={s.some}>
-      <CreatePost dispatch={props.dispatch} forPosts={props.fornewpost} />
+      {/*<CreatePost dispatch={props.dispatch} forPosts={props.fornewpost} />*/}
+      <CreatePostContainer/>
       {postsData}
     </div>
   );

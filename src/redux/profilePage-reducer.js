@@ -14,25 +14,33 @@ const initialState = {
 const profileReducer = (state = initialState, action) => {
 
     switch (action.type){
-        case ADD_POST:
+        case ADD_POST: {
+            const copy = {...state};
+            copy.posts = [...state.posts];
             let newPost = {
-                id: (state.posts.length+1),
+                id: (state.posts.length + 1),
                 text: state.newPostText,
                 header: state.newPostHeader,
                 likes: 0
             };
-            state.posts.unshift(newPost);
-            state.newPostText = "";
-            state.newPostHeader = "";
+            copy.posts.unshift(newPost);
+            copy.newPostText = "";
+            copy.newPostHeader = "";
+            return copy;
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            const copy = {...state};
+            copy.newPostText = action.newText;
+            return copy;
+        }
+        case UPDATE_NEW_POST_HEADER: {
+            const copy = {...state};
+            copy.newPostHeader = action.newHeader;
+            return copy;
+        }
+        default: {
             return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
-        case UPDATE_NEW_POST_HEADER:
-            state.newPostHeader = action.newHeader;
-            return state;
-        default:
-            return state;
+        }
     }
 
 }

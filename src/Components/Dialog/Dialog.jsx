@@ -1,13 +1,13 @@
-import Contacts from "./Contacts/Contacts";
 import s from "./Dialog.module.css";
-import Messeges from "./Messeges/Messeges";
 import React from 'react'
+import ContactsContainer from "./Contacts/ContactsContainer";
+import MessageContainer from "./Messeges/MessagesContainer";
 
 const Dialog = (props) => {
   return (
     <div className={s.dialog}>
-      <Contacts dialogItem={props.state.dialogItem} />
-      <Messeges state={props.state} dispatch={props.dispatch}/>
+      <ContactsContainer />
+      <MessageContainer />
     </div>
   );
 };

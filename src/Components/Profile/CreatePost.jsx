@@ -5,19 +5,20 @@ import {addPostActionCreator, changePostHeaderActionCreator, changePostTextActio
 
 
 const CreatePost = (props) => {
-  let newPostText = React.createRef();
-  let newPostHeader = React.createRef();
+  let newText = React.createRef();
+  let newHeader = React.createRef();
+
   let addPost = () => {
-    props.dispatch(addPostActionCreator())
+    props.ADDPOST();
   };
 
   const changePostText = () => {
-    let text = newPostText.current.value;
-    props.dispatch(changePostTextActionCreator(text));
+    let text = newText.current.value;
+    props.CHANGEBODY(text);
   };
   const changePostHeader = () => {
-    let header = newPostHeader.current.value;
-      props.dispatch(changePostHeaderActionCreator(header))
+    let header = newHeader.current.value;
+      props.CHANGEHEADER(header);
   };
 
   return (
@@ -25,15 +26,15 @@ const CreatePost = (props) => {
       <input
         onChange={changePostHeader}
         type="text"
-        ref={newPostHeader}
+        ref={newHeader}
         placeholder="Заголовок поста"
-        value={props.forPosts.newPostHeader}
+        value={props.newPostHeader}
       />
       <textarea
         onChange={changePostText}
         placeholder="Новый пост"
-        ref={newPostText}
-        value={props.forPosts.newPostText}
+        ref={newText}
+        value={props.newPostText}
       />
       <button onClick={addPost}>Пост</button>
     </div>

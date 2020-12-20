@@ -1,0 +1,9 @@
+const UserItem = () => {
+    return(
+        <div>
+            ures
+        </div>
+    )
+}
+
+export default UserItem;

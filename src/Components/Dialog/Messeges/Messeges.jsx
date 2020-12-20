@@ -5,20 +5,20 @@ import ChatInput from "./ChatInput";
 import {sendMessageActionCreator} from "../../../redux/dialogsPage-reducer";
 
 const Messeges = (props) => {
-    let sms = props.state.dialogMessages.map(el => {
+    let sms = props.dialogMessages.map(el => {
       return  <MessagesItem id={el.id} who={el.who} time={el.time} value={el.value}/>
     });
-    const sendMessage = () => {
-        props.dispatch(sendMessageActionCreator());
-    }
+    // const sendMessage = () => {
+    //     props.dispatch(sendMessageActionCreator());
+    // }
   return (
       <div>
         <div className={s.main}>
           {sms}
          </div>
           <div className={s.reletive}>
-              <ChatInput dispatch={props.dispatch} newDialogMessage={props.state.newDialogMessage}/>
-              <button className={s.button} onClick={sendMessage} />
+              <ChatInput updateDialogMessage={props.updateDialogMessage} newDialogMessage={props.newDialogMessage}/>
+              <button className={s.button} onClick={props.sendMessage} />
           </div>
       </div>
   );

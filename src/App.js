@@ -17,13 +17,13 @@ function App(props) {
   return (
     <BrowserRouter>
     <div className="app-wrapper">
-      <Header/>
+      <Header />
       <div className="wrapper-two">
-      <Navbar sidebar={props.state.sidebar}/>
+      <Navbar />
       <div>
-
-         <Route path="/profile" render={ () => <AllProfile state={props.state.profilePage} dispatch={props.dispatch}/> }/>
-         <Route path="/dialog" render={ () => <Dialog state={props.state.dialogPage} dispatch={props.dispatch}/> }/>
+          {/*<Route path="/" render={ () => <AllProfile state={props.state.profilePage} dispatch={props.dispatch}/> }/>*/}
+         <Route path="/profile" render={ () => <AllProfile /> }/>
+         <Route path="/dialog" render={ () => <Dialog /> }/>
          <Route path="/news" render={() => <News />}/>
          <Route path="/music" render={() => <Music />}/>
          <Route path="/settings" render={() => <Settings />}/>

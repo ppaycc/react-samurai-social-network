@@ -26,30 +26,49 @@ const initialState = {
 }
 
 const dialogsReducer = (state = initialState, action) => {
-    const copy = {...state};
-    copy.dialogMessages = [...state.dialogMessages];
-
-    if (action.type === UPDATE_DIALOG_MESSAGES) {
-        copy.newDialogMessage = action.newValue;
-
-    } else if (action.type === SEND_MESSAGE){
-        debugger;
-        if(copy.newDialogMessage.trim().length >= 1){
+    // const copy = {...state};
+    // copy.dialogMessages = [...state.dialogMessages];
+    switch (action.type){
+        case UPDATE_DIALOG_MESSAGES :{
+            return  {...state, newDialogMessage: action.newValue};
+        }
+        case SEND_MESSAGE :{
+            const copy = {...state, dialogMessages: [...state.dialogMessages]};
             const d = new Date();
             let sms = {
                 id: (copy.dialogMessages.length + 1),
                 value: copy.newDialogMessage,
-                time: `${d.getHours()}:${d.getMinutes()}`,
+                time: `${d.getHours()>10 ? d.getHours() : "0"+d.getHours()}:${d.getMinutes()>10 ? d.getMinutes() : "0"+d.getMinutes()}`,
                 who: "output"
             }
             copy.dialogMessages.unshift(sms);
             copy.newDialogMessage = "";
+            return copy;
         }
-        // copy.newDialogMessage = "";
-
+        default :{
+            return state;
+        }
     }
-
-    return copy;
+    // if (action.type === UPDATE_DIALOG_MESSAGES) {
+    //     copy.newDialogMessage = action.newValue;
+    //
+    // } else if (action.type === SEND_MESSAGE){
+    //     if(copy.newDialogMessage.trim().length >= 1){
+    //         const d = new Date();
+    //         let sms = {
+    //             id: (copy.dialogMessages.length + 1),
+    //             value: copy.newDialogMessage,
+    //             time: `${d.getHours()>10 ? d.getHours() : "0"+d.getHours()}:${d.getMinutes()>10 ? d.getMinutes() : "0"+d.getMinutes()}`,
+    //             who: "output"
+    //         }
+    //         copy.dialogMessages.unshift(sms);
+    //         copy.newDialogMessage = "";
+    //     }
+    //     // copy.newDialogMessage = "";
+    //
+    // }
+    //
+    // return copy;
 }
 
 export const sendMessageActionCreator = () => {
