@@ -1,9 +1,87 @@
-const UserItem = () => {
-    return(
-        <div>
-            ures
-        </div>
-    )
+.wrapper{
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
+    background: white;
+    /*height: calc(100vh - 70px);*/
+    text-align: center;
 }
-
-export default UserItem;
+.item{
+    background: #ccc;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1.2fr 8fr 2fr;
+    gap: 5px;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    justify-content: space-between;
+}
+.item:last-child{
+    margin: 0;
+}
+.ava{
+    width: 77px;
+    height: 77px;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.ava img{
+    width: 100%;
+}
+.one{
+    display: grid;
+    /*grid-template-columns: 1fr;*/
+    /*grid-template-rows: 2fr 1fr;*/
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+/*.one button{*/
+/*    background: white;*/
+/*    border-radius: 20px;*/
+/*    border: none;*/
+/*    transition: .3s;*/
+/*}*/
+.two{
+    text-align: left;
+}
+.one button:hover{
+    color: black;
+    background: pink;
+}
+button:focus{
+    outline: none;
+}
+.three{
+    align-self: center;
+    text-align: right;
+}
+.three p{
+    padding: 0;
+    margin-bottom: 10px;
+}
+.btn{
+    background: #017987;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+    margin: 0 auto;
+    display: inline-block;
+}
+.btn:hover{
+    background: pink;
+    color: black;
+}
+.btnF{
+    padding: 0;
+    background: #017987;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+}

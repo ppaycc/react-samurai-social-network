@@ -6,10 +6,6 @@ import {
     changePostTextActionCreator
 } from "../../redux/profilePage-reducer";
 
-// const CreatePostContainer = () => {
-//     return <CreatePost/>
-// }
-
 const mapStateToProps = (state) => {
     return {
         newPostHeader: state.profilePage.newPostHeader,
@@ -19,13 +15,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps =(dispatch) => {
     return {
-        ADDPOST: () => {
+        addPost: () => {
             dispatch(addPostActionCreator())
         },
-        CHANGEHEADER: (value) => {
+        changeHeader: (value) => {
             dispatch(changePostHeaderActionCreator(value))
         },
-        CHANGEBODY: value => {
+        changeBody: value => {
             dispatch(changePostTextActionCreator(value))
         }
     }

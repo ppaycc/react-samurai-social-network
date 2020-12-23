@@ -1,4 +1,3 @@
-import state, { subscriber} from "./redux/state"
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -10,11 +9,9 @@ import {Provider} from "react-redux";
 
 const rerenderTree = (state) => {
     ReactDOM.render(
-        <React.StrictMode>
             <Provider store={store}>
-                <App state={state} dispatch={store.dispatch.bind(store)}/>
-            </Provider>
-        </React.StrictMode>,
+                <App />
+            </Provider>,
         document.getElementById('root')
     );
 }

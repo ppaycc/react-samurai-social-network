@@ -10,6 +10,7 @@ import Settings from "./Components/Settings/Settings";
 import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
 import React from "react";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 
 
@@ -24,6 +25,7 @@ function App(props) {
           {/*<Route path="/" render={ () => <AllProfile state={props.state.profilePage} dispatch={props.dispatch}/> }/>*/}
          <Route path="/profile" render={ () => <AllProfile /> }/>
          <Route path="/dialog" render={ () => <Dialog /> }/>
+         <Route path="/users" render={ () => <UsersContainer/> } />
          <Route path="/news" render={() => <News />}/>
          <Route path="/music" render={() => <Music />}/>
          <Route path="/settings" render={() => <Settings />}/>

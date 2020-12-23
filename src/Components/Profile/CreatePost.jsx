@@ -1,24 +1,17 @@
 import s from "./CreatePost.module.css";
 import React from "react";
-import {addPostActionCreator, changePostHeaderActionCreator, changePostTextActionCreator} from "../../redux/profilePage-reducer";
-
-
 
 const CreatePost = (props) => {
   let newText = React.createRef();
   let newHeader = React.createRef();
 
-  let addPost = () => {
-    props.ADDPOST();
-  };
-
   const changePostText = () => {
     let text = newText.current.value;
-    props.CHANGEBODY(text);
+    props.changeBody(text);
   };
   const changePostHeader = () => {
     let header = newHeader.current.value;
-      props.CHANGEHEADER(header);
+      props.changeHeader(header);
   };
 
   return (
@@ -36,7 +29,7 @@ const CreatePost = (props) => {
         ref={newText}
         value={props.newPostText}
       />
-      <button onClick={addPost}>Пост</button>
+      <button onClick={props.addPost}>Пост</button>
     </div>
   );
 };
