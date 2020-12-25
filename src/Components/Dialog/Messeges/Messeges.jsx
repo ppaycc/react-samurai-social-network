@@ -2,7 +2,6 @@ import React from 'react'
 import s from "./Messeges.module.css";
 import MessagesItem from "./MessegesItem";
 import ChatInput from "./ChatInput";
-import {sendMessageActionCreator} from "../../../redux/dialogsPage-reducer";
 
 const Messeges = (props) => {
     let sms = props.dialogMessages.map(el => {

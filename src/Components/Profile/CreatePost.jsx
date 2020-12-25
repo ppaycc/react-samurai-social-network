@@ -5,13 +5,13 @@ const CreatePost = (props) => {
   let newText = React.createRef();
   let newHeader = React.createRef();
 
-  const changePostText = () => {
+  const changePostTexts = () => {
     let text = newText.current.value;
-    props.changeBody(text);
+    props.changePostText(text);
   };
   const changePostHeader = () => {
     let header = newHeader.current.value;
-      props.changeHeader(header);
+      props.changePostHeader(header);
   };
 
   return (
@@ -24,7 +24,7 @@ const CreatePost = (props) => {
         value={props.newPostHeader}
       />
       <textarea
-        onChange={changePostText}
+        onChange={changePostTexts}
         placeholder="Новый пост"
         ref={newText}
         value={props.newPostText}

@@ -1,9 +1,9 @@
 import CreatePost from "./CreatePost";
 import {connect} from "react-redux";
 import {
-    addPostActionCreator,
-    changePostHeaderActionCreator,
-    changePostTextActionCreator
+    addPost,
+    changePostHeader,
+    changePostText
 } from "../../redux/profilePage-reducer";
 
 const mapStateToProps = (state) => {
@@ -13,20 +13,20 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps =(dispatch) => {
-    return {
-        addPost: () => {
-            dispatch(addPostActionCreator())
-        },
-        changeHeader: (value) => {
-            dispatch(changePostHeaderActionCreator(value))
-        },
-        changeBody: value => {
-            dispatch(changePostTextActionCreator(value))
-        }
-    }
-}
+// const mapDispatchToProps =(dispatch) => {
+//     return {
+//         addPost: () => {
+//             dispatch(addPost())
+//         },
+//         changeHeader: (value) => {
+//             dispatch(changePostHeader(value))
+//         },
+//         changeBody: value => {
+//             dispatch(changePostText(value))
+//         }
+//     }
+// }
 
-const CreatePostContainer = connect(mapStateToProps, mapDispatchToProps)(CreatePost);
+const CreatePostContainer = connect(mapStateToProps, {addPost, changePostHeader, changePostText})(CreatePost);
 
 export default CreatePostContainer;

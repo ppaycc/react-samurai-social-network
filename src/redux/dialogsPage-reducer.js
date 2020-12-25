@@ -71,10 +71,10 @@ const dialogsReducer = (state = initialState, action) => {
     // return copy;
 }
 
-export const sendMessageActionCreator = () => {
+export const sendMessage = () => {
     return {type: SEND_MESSAGE}
 }
-export const updateDialogMessageActionCreator = (text) =>{
+export const updateDialogMessage = (text) =>{
     return {type: UPDATE_DIALOG_MESSAGES, newValue: text}
 }
 

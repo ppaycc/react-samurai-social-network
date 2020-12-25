@@ -1,6 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_HEADER = 'UPDATE-NEW-POST-HEADER';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_PROPFILE = 'SET_PROPFILE';
 
 const initialState = {
     newPostText: "",
@@ -9,7 +10,8 @@ const initialState = {
         { id: 1, header: "Заголовок поста", text: "Это текст поста", likes: 20 },
         { id: 2, header: "Еще один длинный заголовок поста Еще один длинный заголовок поста Еще один длинный заголовок поста", text: "Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста Это текст длинного поста", likes: 15,},
         { id: 3, header: "Совершил ли самоубийство Гитлер", text: "Свалил та свалил тебе то шо лол", likes: 999 },
-    ]
+    ],
+    profile: null
 }
 const profileReducer = (state = initialState, action) => {
 
@@ -40,6 +42,9 @@ const profileReducer = (state = initialState, action) => {
             // copy.newPostHeader = action.newHeader;
             return {...state, newPostHeader: action.newHeader};
         }
+        case SET_PROPFILE :{
+            return {...state, profile: action.profile}
+        }
         default: {
             return state;
         }
@@ -47,14 +52,17 @@ const profileReducer = (state = initialState, action) => {
 
 }
 
-export const changePostTextActionCreator = (text) => {
+export const changePostText = (text) => {
     return {type: UPDATE_NEW_POST_TEXT, newText: text}
 }
-export const changePostHeaderActionCreator = (header) => {
+export const changePostHeader = (header) => {
     return {type: UPDATE_NEW_POST_HEADER, newHeader: header}
 }
-export const addPostActionCreator = () => {
+export const addPost = () => {
     return {type: ADD_POST}
+}
+export const setProfileInf = (profile) => {
+    return {type: SET_PROPFILE, profile}
 }
 
 export default profileReducer;
